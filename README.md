@@ -22,6 +22,8 @@ $module = go mod download -json "github.com/fyyhub/gorepo@$version" | ConvertFro
 
 The mirrored files are included in the module source under `$module.Dir/files`.
 
+Do not run the module root as the restore tool. The restore command lives under `cmd/restorefiles`.
+
 ## Large files and EXE files
 
 Files larger than the chunk threshold are split automatically. The default threshold is `95 MiB`, so a large file such as `tool.exe` is stored like this:
