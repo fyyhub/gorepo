@@ -55,7 +55,7 @@ jobs:
 
       - name: Download URL manifest
         if: steps.manifest.outputs.should_sync == 'true'
-        run: go run ./cmd/syncfiles -manifest urls.txt -out files -clean
+        run: go run ./cmd/syncfiles -manifest urls.txt -out files -clean -chunk-size 99614720
 
       - name: Commit mirrored files
         if: steps.manifest.outputs.should_sync == 'true'

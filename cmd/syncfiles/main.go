@@ -19,7 +19,16 @@ import (
 )
 
 type manifestEntry struct {
-	Source string `json:"source"`
+	Source    string      `json:"source"`
+	Path      string      `json:"path"`
+	SHA256    string      `json:"sha256"`
+	Size      int64       `json:"size"`
+	Chunked   bool        `json:"chunked,omitempty"`
+	ChunkSize int64       `json:"chunk_size,omitempty"`
+	Chunks    []chunkInfo `json:"chunks,omitempty"`
+}
+
+type chunkInfo struct {
 	Path   string `json:"path"`
 	SHA256 string `json:"sha256"`
 	Size   int64  `json:"size"`
@@ -39,19 +48,23 @@ func main() {
 	manifestPath := flag.String("manifest", "urls.txt", "URL manifest file")
 	outDir := flag.String("out", "files", "directory for downloaded files")
 	clean := flag.Bool("clean", false, "remove the output directory before downloading")
+	chunkSize := flag.Int64("chunk-size", 95*1024*1024, "split files larger than this size; set 0 to disable chunking")
 	timeout := flag.Duration("timeout", 5*time.Minute, "per-request timeout")
 	flag.Parse()
 
-	if err := run(*manifestPath, *outDir, *clean, *timeout); err != nil {
+	if err := run(*manifestPath, *outDir, *clean, *chunkSize, *timeout); err != nil {
 		fmt.Fprintln(os.Stderr, err)
 		os.Exit(1)
 	}
 }
 
-func run(manifestPath, outDir string, clean bool, timeout time.Duration) error {
+func run(manifestPath, outDir string, clean bool, chunkSize int64, timeout time.Duration) error {
 	items, err := parseManifest(manifestPath)
 	if err != nil {
 		return err
+	}
+	if chunkSize < 0 {
+		return errors.New("chunk size cannot be negative")
 	}
 
 	outDir = filepath.Clean(outDir)
@@ -67,6 +80,7 @@ func run(manifestPath, outDir string, clean bool, timeout time.Duration) error {
 	if err := os.MkdirAll(outDir, 0o755); err != nil {
 		return fmt.Errorf("create output directory: %w", err)
 	}
+	defer os.RemoveAll(filepath.Join(outDir, ".tmp"))
 
 	client := &http.Client{Timeout: timeout}
 	seen := map[string]string{}
@@ -89,12 +103,16 @@ func run(manifestPath, outDir string, clean bool, timeout time.Duration) error {
 		}
 		seen[rel] = it.url
 
-		entry, err := download(client, it.url, outDir, rel)
+		entry, err := download(client, it.url, outDir, rel, chunkSize)
 		if err != nil {
 			return fmt.Errorf("line %d: %w", it.line, err)
 		}
 		entries = append(entries, entry)
-		fmt.Printf("downloaded %s -> %s (%d bytes)\n", it.url, entry.Path, entry.Size)
+		if entry.Chunked {
+			fmt.Printf("downloaded %s -> %s (%d bytes split into %d chunks)\n", it.url, entry.Path, entry.Size, len(entry.Chunks))
+		} else {
+			fmt.Printf("downloaded %s -> %s (%d bytes)\n", it.url, entry.Path, entry.Size)
+		}
 	}
 
 	sort.SliceStable(entries, func(i, j int) bool {
@@ -135,7 +153,7 @@ func parseManifest(name string) ([]item, error) {
 	return items, nil
 }
 
-func download(client *http.Client, source, outDir, rel string) (manifestEntry, error) {
+func download(client *http.Client, source, outDir, rel string, chunkSize int64) (manifestEntry, error) {
 	req, err := http.NewRequest(http.MethodGet, source, nil)
 	if err != nil {
 		return manifestEntry{}, err
@@ -152,39 +170,140 @@ func download(client *http.Client, source, outDir, rel string) (manifestEntry, e
 		return manifestEntry{}, fmt.Errorf("download %s: unexpected status %s", source, resp.Status)
 	}
 
-	dst := filepath.Join(outDir, filepath.FromSlash(rel))
-	if err := os.MkdirAll(filepath.Dir(dst), 0o755); err != nil {
+	tmpDir := filepath.Join(outDir, ".tmp")
+	if err := os.MkdirAll(tmpDir, 0o755); err != nil {
 		return manifestEntry{}, err
 	}
 
-	tmp := dst + ".tmp"
-	file, err := os.OpenFile(tmp, os.O_CREATE|os.O_TRUNC|os.O_WRONLY, 0o644)
+	tmp, err := os.CreateTemp(tmpDir, "download-*")
 	if err != nil {
 		return manifestEntry{}, err
 	}
+	tmpName := tmp.Name()
 
 	hasher := sha256.New()
-	size, copyErr := io.Copy(io.MultiWriter(file, hasher), resp.Body)
-	closeErr := file.Close()
+	size, copyErr := io.Copy(io.MultiWriter(tmp, hasher), resp.Body)
+	closeErr := tmp.Close()
 	if copyErr != nil {
-		_ = os.Remove(tmp)
+		_ = os.Remove(tmpName)
 		return manifestEntry{}, copyErr
 	}
 	if closeErr != nil {
-		_ = os.Remove(tmp)
+		_ = os.Remove(tmpName)
 		return manifestEntry{}, closeErr
 	}
-	if err := os.Rename(tmp, dst); err != nil {
-		_ = os.Remove(tmp)
-		return manifestEntry{}, err
-	}
+	defer os.Remove(tmpName)
 
-	return manifestEntry{
+	entry := manifestEntry{
 		Source: source,
 		Path:   filepath.ToSlash(rel),
 		SHA256: hex.EncodeToString(hasher.Sum(nil)),
 		Size:   size,
-	}, nil
+	}
+	if chunkSize > 0 && size > chunkSize {
+		chunks, err := splitFile(tmpName, outDir, rel, chunkSize)
+		if err != nil {
+			return manifestEntry{}, err
+		}
+		entry.Chunked = true
+		entry.ChunkSize = chunkSize
+		entry.Chunks = chunks
+		return entry, nil
+	}
+
+	dst := filepath.Join(outDir, filepath.FromSlash(rel))
+	if err := os.MkdirAll(filepath.Dir(dst), 0o755); err != nil {
+		return manifestEntry{}, err
+	}
+	if err := os.Rename(tmpName, dst); err != nil {
+		return manifestEntry{}, err
+	}
+	return entry, nil
+}
+
+func splitFile(sourceFile, outDir, rel string, chunkSize int64) ([]chunkInfo, error) {
+	src, err := os.Open(sourceFile)
+	if err != nil {
+		return nil, err
+	}
+	defer src.Close()
+
+	chunkDirRel := path.Join("_chunks", rel+".parts")
+	chunkDir := filepath.Join(outDir, filepath.FromSlash(chunkDirRel))
+	if err := os.MkdirAll(chunkDir, 0o755); err != nil {
+		return nil, err
+	}
+
+	buffer := make([]byte, 1024*1024)
+	var chunks []chunkInfo
+	for part := 1; ; part++ {
+		name := fmt.Sprintf("part%04d", part)
+		chunkRel := path.Join(chunkDirRel, name)
+		chunkPath := filepath.Join(outDir, filepath.FromSlash(chunkRel))
+		tmp := chunkPath + ".tmp"
+
+		chunk, err := os.OpenFile(tmp, os.O_CREATE|os.O_TRUNC|os.O_WRONLY, 0o644)
+		if err != nil {
+			return nil, err
+		}
+		hasher := sha256.New()
+		written, copyErr := copyN(io.MultiWriter(chunk, hasher), src, chunkSize, buffer)
+		closeErr := chunk.Close()
+		if copyErr != nil {
+			_ = os.Remove(tmp)
+			return nil, copyErr
+		}
+		if closeErr != nil {
+			_ = os.Remove(tmp)
+			return nil, closeErr
+		}
+		if written == 0 {
+			_ = os.Remove(tmp)
+			break
+		}
+		if err := os.Rename(tmp, chunkPath); err != nil {
+			_ = os.Remove(tmp)
+			return nil, err
+		}
+
+		chunks = append(chunks, chunkInfo{
+			Path:   filepath.ToSlash(chunkRel),
+			SHA256: hex.EncodeToString(hasher.Sum(nil)),
+			Size:   written,
+		})
+		if written < chunkSize {
+			break
+		}
+	}
+	return chunks, nil
+}
+
+func copyN(dst io.Writer, src io.Reader, n int64, buffer []byte) (int64, error) {
+	var written int64
+	for written < n {
+		limit := n - written
+		if int64(len(buffer)) > limit {
+			buffer = buffer[:limit]
+		}
+		read, err := src.Read(buffer)
+		if read > 0 {
+			out, writeErr := dst.Write(buffer[:read])
+			written += int64(out)
+			if writeErr != nil {
+				return written, writeErr
+			}
+			if out != read {
+				return written, io.ErrShortWrite
+			}
+		}
+		if err == io.EOF {
+			return written, nil
+		}
+		if err != nil {
+			return written, err
+		}
+	}
+	return written, nil
 }
 
 func outputPathForURL(raw string) (string, error) {
