@@ -1,10 +1,24 @@
 {
   "files": [
     {
-      "source": "https://packages.timber.io/vector/0.56.0/vector-0.56.0-x86_64-unknown-linux-gnu.tar.gz",
-      "path": "packages.timber.io/vector/0.56.0/vector-0.56.0-x86_64-unknown-linux-gnu.tar.gz",
-      "sha256": "7139f412c9d1c5fdff4b59d566c6dbad8a2ef8bb5aa3db82c81e78e4cd919019",
-      "size": 54825544
+      "source": "https://github.com/Eugeny/tabby/releases/download/v1.0.234/tabby-1.0.234-setup-x64.exe",
+      "path": "github.com/Eugeny/tabby/releases/download/v1.0.234/tabby-1.0.234-setup-x64.exe",
+      "sha256": "4bb7066c302bd5cf18bcc8d27128e51833f03338994faefe53a4959beb85ba3b",
+      "size": 150056176,
+      "chunked": true,
+      "chunk_size": 99614720,
+      "chunks": [
+        {
+          "path": "_chunks/github.com/Eugeny/tabby/releases/download/v1.0.234/tabby-1.0.234-setup-x64.exe.parts/part0001",
+          "sha256": "39b530a3e79c6493a9066b3e0b8cff36b205ec8e6c1885b6cf31d0928383d191",
+          "size": 99614720
+        },
+        {
+          "path": "_chunks/github.com/Eugeny/tabby/releases/download/v1.0.234/tabby-1.0.234-setup-x64.exe.parts/part0002",
+          "sha256": "700ed8805f47f4141c98a22f1b0c724b6a6e19336f16d4dbc36917d73fe05738",
+          "size": 50441456
+        }
+      ]
     }
   ]
 }
