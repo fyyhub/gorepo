@@ -1,0 +1,10 @@
+{
+  "files": [
+    {
+      "source": "https://packages.timber.io/vector/0.56.0/vector-0.56.0-x86_64-unknown-linux-gnu.tar.gz",
+      "path": "packages.timber.io/vector/0.56.0/vector-0.56.0-x86_64-unknown-linux-gnu.tar.gz",
+      "sha256": "7139f412c9d1c5fdff4b59d566c6dbad8a2ef8bb5aa3db82c81e78e4cd919019",
+      "size": 54825544
+    }
+  ]
+}
