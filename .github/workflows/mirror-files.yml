@@ -1,0 +1,107 @@
+name: Mirror files
+
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - main
+    paths:
+      - urls.txt
+      - go.mod
+      - go.sum
+      - cmd/syncfiles/**
+      - .github/workflows/mirror-files.yml
+
+permissions:
+  contents: write
+
+concurrency:
+  group: mirror-files-${{ github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  mirror:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ github.ref_name }}
+          fetch-depth: 0
+
+      - name: Check URL manifest
+        id: manifest
+        shell: bash
+        run: |
+          set -euo pipefail
+
+          if sed '1s/^\xEF\xBB\xBF//' urls.txt | grep -Ev '^[[:space:]]*(#|$)' | grep -q .; then
+            echo "should_sync=true" >> "$GITHUB_OUTPUT"
+          elif [[ -d files ]]; then
+            echo "should_sync=true" >> "$GITHUB_OUTPUT"
+            echo "urls.txt has no URL entries; existing files/ will be cleaned."
+          else
+            echo "should_sync=false" >> "$GITHUB_OUTPUT"
+            echo "urls.txt has no URL entries; skipping mirror release."
+          fi
+
+      - name: Set up Go
+        if: steps.manifest.outputs.should_sync == 'true'
+        uses: actions/setup-go@v5
+        with:
+          go-version-file: go.mod
+          cache: true
+
+      - name: Download URL manifest
+        if: steps.manifest.outputs.should_sync == 'true'
+        run: go run ./cmd/syncfiles -manifest urls.txt -out files -clean
+
+      - name: Commit mirrored files
+        if: steps.manifest.outputs.should_sync == 'true'
+        shell: bash
+        run: |
+          set -euo pipefail
+
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+
+          git add files
+          if git diff --cached --quiet; then
+            echo "No mirrored file changes to commit."
+          else
+            git commit -m "chore: mirror files from urls.txt"
+            git push origin "HEAD:${GITHUB_REF_NAME}"
+          fi
+
+      - name: Create tag and GitHub release
+        if: steps.manifest.outputs.should_sync == 'true'
+        shell: bash
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+
+          git fetch --tags --force
+
+          tag="$(git tag --points-at HEAD --list 'v0.0.*' --sort=-v:refname | head -n1 || true)"
+          if [[ -z "$tag" ]]; then
+            latest="$(git tag --list 'v0.0.*' --sort=-v:refname | head -n1 || true)"
+            if [[ "$latest" =~ ^v0\.0\.([0-9]+)$ ]]; then
+              next="$((BASH_REMATCH[1] + 1))"
+            else
+              next="1"
+            fi
+            tag="v0.0.${next}"
+            git tag -a "$tag" -m "Release $tag"
+            git push origin "$tag"
+          fi
+
+          tar -czf mirrored-files.tar.gz files
+          if gh release view "$tag" >/dev/null 2>&1; then
+            echo "Release $tag already exists."
+          else
+            gh release create "$tag" mirrored-files.tar.gz \
+              --title "$tag" \
+              --notes "Mirrored files generated from urls.txt. The files are committed under files/ and are available through the Go module source archive for this tag."
+          fi
