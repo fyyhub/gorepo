@@ -13,6 +13,8 @@ on:
       - README.md
       - cmd/syncfiles/**
       - cmd/restorefiles/**
+      - cmd/restoreversion/**
+      - internal/restorefiles/**
       - .github/workflows/mirror-files.yml
 
 permissions:

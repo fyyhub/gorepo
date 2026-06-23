@@ -11,18 +11,17 @@ The important part for an internal Go proxy is the committed `files/` directory 
 3. GitHub Actions runs `.github/workflows/mirror-files.yml`:
    - downloads the URLs with `go run ./cmd/syncfiles -manifest urls.txt -out files -clean`
    - commits the result under `files/`
-   - creates the next `v0.0.N` tag
+   - creates the next `v0.x.y` tag
    - creates a GitHub Release with `mirrored-files.tar.gz`
 4. From the internal network, fetch the module through your company Go mirror:
 
 ```powershell
-$version = "v0.0.1"
-$module = go mod download -json "github.com/fyyhub/gorepo@$version" | ConvertFrom-Json
+go run "github.com/fyyhub/gorepo/cmd/restoreversion@v0.1.13" -out restored
 ```
 
-The mirrored files are included in the module source under `$module.Dir/files`.
+The command downloads that module version through Go, finds the mirrored `files/` directory in the module cache, restores chunked files, and verifies SHA256 checksums. It uses your local Go environment, so set `GOPROXY` to your company Go mirror before running it inside the internal network.
 
-Do not run the module root as the restore tool. The restore command lives under `cmd/restorefiles`.
+Do not run the module root as the restore tool. Use `cmd/restoreversion` for one-command restore, or `cmd/restorefiles` if you already know the local `files/` directory.
 
 ## Large files and EXE files
 
@@ -37,9 +36,7 @@ files/manifest.json
 The original target path is still recorded in `files/manifest.json` as `tools/tool.exe`. Restore chunked files after fetching the module:
 
 ```powershell
-$version = "v0.0.1"
-$module = go mod download -json "github.com/fyyhub/gorepo@$version" | ConvertFrom-Json
-go run "github.com/fyyhub/gorepo/cmd/restorefiles@$version" -in (Join-Path $module.Dir "files") -out restored
+go run "github.com/fyyhub/gorepo/cmd/restoreversion@v0.1.13" -out restored
 ```
 
 The restored file is written to:
@@ -51,9 +48,19 @@ restored/tools/tool.exe
 The restore tool verifies every chunk and the final file with SHA256. You can also verify without writing restored files:
 
 ```powershell
-$version = "v0.0.1"
-$module = go mod download -json "github.com/fyyhub/gorepo@$version" | ConvertFrom-Json
-go run "github.com/fyyhub/gorepo/cmd/restorefiles@$version" -in (Join-Path $module.Dir "files") -verify-only
+go run "github.com/fyyhub/gorepo/cmd/restoreversion@v0.1.13" -verify-only
+```
+
+If you already have a local `files/` directory, use the lower-level restore command:
+
+```powershell
+go run "github.com/fyyhub/gorepo/cmd/restorefiles@v0.1.13" -in files -out restored
+```
+
+If your Go environment cannot infer the version from `@v0.1.13`, pass it explicitly:
+
+```powershell
+go run "github.com/fyyhub/gorepo/cmd/restoreversion@v0.1.13" -version v0.1.13 -out restored
 ```
 
 To change the chunk threshold in GitHub Actions, edit the `-chunk-size` value in `.github/workflows/mirror-files.yml`. Use `0` to disable chunking.
@@ -87,5 +94,5 @@ files/tools/demo.zip
 ## Notes
 
 - GitHub blocks normal Git files larger than 100 MB, so very large files should not be committed directly.
-- Tags use `v0.0.N` to avoid Go's special module path rules for `v2+`.
+- Tags stay under `v0.x.y` to avoid Go's special module path rules for `v2+`.
 - If `urls.txt` becomes empty later, the workflow cleans old `files/` content and publishes a new tag for that state.
