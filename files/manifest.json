@@ -1,22 +1,22 @@
 {
   "files": [
     {
-      "source": "https://github.com/Eugeny/tabby/releases/download/v1.0.234/tabby-1.0.234-setup-x64.exe",
-      "path": "github.com/Eugeny/tabby/releases/download/v1.0.234/tabby-1.0.234-setup-x64.exe",
-      "sha256": "4bb7066c302bd5cf18bcc8d27128e51833f03338994faefe53a4959beb85ba3b",
-      "size": 150056176,
+      "source": "https://github.com/mcp-router/mcp-router/releases/download/v0.6.2/MCP.Router-0.6.2.Setup.exe",
+      "path": "github.com/mcp-router/mcp-router/releases/download/v0.6.2/MCP.Router-0.6.2.Setup.exe",
+      "sha256": "3bf74371d48cd39e5759d3d4df9a1950898b0791f57eb954c49fc108649ea557",
+      "size": 121547776,
       "chunked": true,
       "chunk_size": 99614720,
       "chunks": [
         {
-          "path": "_chunks/github.com/Eugeny/tabby/releases/download/v1.0.234/tabby-1.0.234-setup-x64.exe.parts/part0001",
-          "sha256": "39b530a3e79c6493a9066b3e0b8cff36b205ec8e6c1885b6cf31d0928383d191",
+          "path": "_chunks/github.com/mcp-router/mcp-router/releases/download/v0.6.2/MCP.Router-0.6.2.Setup.exe.parts/part0001",
+          "sha256": "723692344cb1edcc283d713245cb29b2110011c2d3d0cebd80404803557ba8cd",
           "size": 99614720
         },
         {
-          "path": "_chunks/github.com/Eugeny/tabby/releases/download/v1.0.234/tabby-1.0.234-setup-x64.exe.parts/part0002",
-          "sha256": "700ed8805f47f4141c98a22f1b0c724b6a6e19336f16d4dbc36917d73fe05738",
-          "size": 50441456
+          "path": "_chunks/github.com/mcp-router/mcp-router/releases/download/v0.6.2/MCP.Router-0.6.2.Setup.exe.parts/part0002",
+          "sha256": "7d48d95c923c5253ccf072127397f201f2e216d84a6d1827d4307a3f845f27b3",
+          "size": 21933056
         }
       ]
     }
