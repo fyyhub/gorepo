@@ -1,10 +1,10 @@
 {
   "files": [
     {
-      "source": "https://github.com/vectordotdev/vector/archive/refs/heads/master.zip",
-      "path": "github.com/vectordotdev/vector/archive/refs/heads/master.zip",
-      "sha256": "0e86a1b189c509e2acc2550cd49885d6f8740ee638f68ea8f0ccadcbc17738ae",
-      "size": 29403643
+      "source": "https://packages.timber.io/vector/0.56.0/vector-0.56.0-x86_64-unknown-linux-musl.tar.gz",
+      "path": "packages.timber.io/vector/0.56.0/vector-0.56.0-x86_64-unknown-linux-musl.tar.gz",
+      "sha256": "8c114c5e9fd9646516f014d5d837690447cf0d4f43ba4a3746713bc0612b039b",
+      "size": 53980523
     }
   ]
 }
