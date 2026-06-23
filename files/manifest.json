@@ -1,10 +1,10 @@
 {
   "files": [
     {
-      "source": "https://packages.timber.io/vector/0.56.0/vector-0.56.0-x86_64-unknown-linux-musl.tar.gz",
-      "path": "packages.timber.io/vector/0.56.0/vector-0.56.0-x86_64-unknown-linux-musl.tar.gz",
-      "sha256": "8c114c5e9fd9646516f014d5d837690447cf0d4f43ba4a3746713bc0612b039b",
-      "size": 53980523
+      "source": "https://packages.timber.io/vector/0.56.0/vector-0.56.0-aarch64-unknown-linux-gnu.tar.gz",
+      "path": "packages.timber.io/vector/0.56.0/vector-0.56.0-aarch64-unknown-linux-gnu.tar.gz",
+      "sha256": "695cbab7a128e080b380cf29b3b40f3b0688b14280e891ed9129b3d34f4d5847",
+      "size": 53812498
     }
   ]
 }
