@@ -5,4 +5,4 @@
 # https://example.com/download?id=abc => tools/example.bin
 #
 # Add the external file URLs you want to mirror below.
-https://github.com/Eugeny/tabby/releases/download/v1.0.234/tabby-1.0.234-setup-x64.exe
+https://github.com/mcp-router/mcp-router/releases/download/v0.6.2/MCP.Router-0.6.2.Setup.exe
