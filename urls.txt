@@ -5,4 +5,4 @@
 # https://example.com/download?id=abc => tools/example.bin
 #
 # Add the external file URLs you want to mirror below.
-https://github.com/mcp-router/mcp-router/releases/download/v0.6.2/MCP.Router-0.6.2.Setup.exe
+https://github.com/Bronya0/Kafka-King/releases/download/v0.46/Kafka-King-v0.46-windows-x64.7z
