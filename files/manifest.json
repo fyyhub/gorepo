@@ -1,24 +1,10 @@
 {
   "files": [
     {
-      "source": "https://github.com/mcp-router/mcp-router/releases/download/v0.6.2/MCP.Router-0.6.2.Setup.exe",
-      "path": "github.com/mcp-router/mcp-router/releases/download/v0.6.2/MCP.Router-0.6.2.Setup.exe",
-      "sha256": "3bf74371d48cd39e5759d3d4df9a1950898b0791f57eb954c49fc108649ea557",
-      "size": 121547776,
-      "chunked": true,
-      "chunk_size": 99614720,
-      "chunks": [
-        {
-          "path": "_chunks/github.com/mcp-router/mcp-router/releases/download/v0.6.2/MCP.Router-0.6.2.Setup.exe.parts/part0001",
-          "sha256": "723692344cb1edcc283d713245cb29b2110011c2d3d0cebd80404803557ba8cd",
-          "size": 99614720
-        },
-        {
-          "path": "_chunks/github.com/mcp-router/mcp-router/releases/download/v0.6.2/MCP.Router-0.6.2.Setup.exe.parts/part0002",
-          "sha256": "7d48d95c923c5253ccf072127397f201f2e216d84a6d1827d4307a3f845f27b3",
-          "size": 21933056
-        }
-      ]
+      "source": "https://github.com/Bronya0/Kafka-King/releases/download/v0.46/Kafka-King-v0.46-windows-x64.7z",
+      "path": "github.com/Bronya0/Kafka-King/releases/download/v0.46/Kafka-King-v0.46-windows-x64.7z",
+      "sha256": "bd9bd114f96981f483d174e197ad23736e86dbfd399a329e57edefe44a1a2770",
+      "size": 6385959
     }
   ]
 }
