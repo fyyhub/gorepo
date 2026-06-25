@@ -5,4 +5,4 @@
 # https://example.com/download?id=abc => tools/example.bin
 #
 # Add the external file URLs you want to mirror below.
-https://github.com/Bronya0/Kafka-King/releases/download/v0.46/Kafka-King-v0.46-windows-x64.7z
+https://nodejs.org/dist/v24.18.0/node-v24.18.0-linux-arm64.tar.xz
