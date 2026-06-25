@@ -1,10 +1,10 @@
 {
   "files": [
     {
-      "source": "https://github.com/Bronya0/Kafka-King/releases/download/v0.46/Kafka-King-v0.46-windows-x64.7z",
-      "path": "github.com/Bronya0/Kafka-King/releases/download/v0.46/Kafka-King-v0.46-windows-x64.7z",
-      "sha256": "bd9bd114f96981f483d174e197ad23736e86dbfd399a329e57edefe44a1a2770",
-      "size": 6385959
+      "source": "https://nodejs.org/dist/v24.18.0/node-v24.18.0-linux-arm64.tar.xz",
+      "path": "nodejs.org/dist/v24.18.0/node-v24.18.0-linux-arm64.tar.xz",
+      "sha256": "58c9520501f6ae2b52d5b210444e24b9d0c029a58c5011b797bc1fe7105886f6",
+      "size": 30473480
     }
   ]
 }
