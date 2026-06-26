@@ -1,10 +1,10 @@
 {
   "files": [
     {
-      "source": "https://nodejs.org/dist/v24.18.0/node-v24.18.0-linux-arm64.tar.xz",
-      "path": "nodejs.org/dist/v24.18.0/node-v24.18.0-linux-arm64.tar.xz",
-      "sha256": "58c9520501f6ae2b52d5b210444e24b9d0c029a58c5011b797bc1fe7105886f6",
-      "size": 30473480
+      "source": "https://packages.timber.io/vector/0.56.0/vector-0.56.0-x86_64-unknown-linux-gnu.tar.gz",
+      "path": "packages.timber.io/vector/0.56.0/vector-0.56.0-x86_64-unknown-linux-gnu.tar.gz",
+      "sha256": "7139f412c9d1c5fdff4b59d566c6dbad8a2ef8bb5aa3db82c81e78e4cd919019",
+      "size": 54825544
     }
   ]
 }
