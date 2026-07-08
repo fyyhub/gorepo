@@ -5,4 +5,4 @@
 # https://example.com/download?id=abc => tools/example.bin
 #
 # Add the external file URLs you want to mirror below.
-https://github.com/musistudio/claude-code-router/releases/download/v3.0.9/Claude-Code-Router_3.0.9.exe
+https://github.com/farion1231/cc-switch/releases/download/v3.16.5/CC-Switch-v3.16.5-Windows.msi
