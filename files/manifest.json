@@ -1,10 +1,10 @@
 {
   "files": [
     {
-      "source": "https://github.com/farion1231/cc-switch/releases/download/v3.16.5/CC-Switch-v3.16.5-Windows.msi",
-      "path": "github.com/farion1231/cc-switch/releases/download/v3.16.5/CC-Switch-v3.16.5-Windows.msi",
-      "sha256": "3a29982008bbf0419999df59ad2bdbf545c3b2bb29d87f2594f260ecacc22346",
-      "size": 12386304
+      "source": "https://github.com/farion1231/cc-switch/releases/download/v3.16.5/CC-Switch-v3.16.5-Windows-Portable.zip",
+      "path": "github.com/farion1231/cc-switch/releases/download/v3.16.5/CC-Switch-v3.16.5-Windows-Portable.zip",
+      "sha256": "bfacdd5482d917a3c363e2a56b554935b32ceb5ae4b37453e8fab09fda329498",
+      "size": 12407588
     }
   ]
 }
