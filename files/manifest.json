@@ -1,10 +1,24 @@
 {
   "files": [
     {
-      "source": "https://packages.timber.io/vector/0.56.0/vector-0.56.0-x86_64-unknown-linux-gnu.tar.gz",
-      "path": "packages.timber.io/vector/0.56.0/vector-0.56.0-x86_64-unknown-linux-gnu.tar.gz",
-      "sha256": "7139f412c9d1c5fdff4b59d566c6dbad8a2ef8bb5aa3db82c81e78e4cd919019",
-      "size": 54825544
+      "source": "https://github.com/musistudio/claude-code-router/releases/download/v3.0.9/Claude-Code-Router_3.0.9.exe",
+      "path": "github.com/musistudio/claude-code-router/releases/download/v3.0.9/Claude-Code-Router_3.0.9.exe",
+      "sha256": "4248aeee50f1c60869e2df9f0d13c606c97a4915e28197c8fa567123b23ed880",
+      "size": 100554841,
+      "chunked": true,
+      "chunk_size": 99614720,
+      "chunks": [
+        {
+          "path": "_chunks/github.com/musistudio/claude-code-router/releases/download/v3.0.9/Claude-Code-Router_3.0.9.exe.parts/part0001",
+          "sha256": "a01d3b41cb2c1d839444e1df6fa50aaabdde95ef2ff1872f7997871488aa1610",
+          "size": 99614720
+        },
+        {
+          "path": "_chunks/github.com/musistudio/claude-code-router/releases/download/v3.0.9/Claude-Code-Router_3.0.9.exe.parts/part0002",
+          "sha256": "e142ba075405cdc9cc93563b9eee4068df79a86e35edba5704d9651265daffa8",
+          "size": 940121
+        }
+      ]
     }
   ]
 }
