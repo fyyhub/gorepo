@@ -1,10 +1,10 @@
 {
   "files": [
     {
-      "source": "https://github.com/thuanpham582002/tabby-mcp-server/archive/refs/tags/v1.0.3.zip",
-      "path": "github.com/thuanpham582002/tabby-mcp-server/archive/refs/tags/v1.0.3.zip",
-      "sha256": "58dd296a8a09b35817f1df0ccebcf993727a9485129dde8d53cc93aa1a038ae1",
-      "size": 7890343
+      "source": "https://github.com/Eugeny/tabby/archive/refs/tags/v1.0.234.zip",
+      "path": "github.com/Eugeny/tabby/archive/refs/tags/v1.0.234.zip",
+      "sha256": "56a49e84d7f7ab9f0916b360272eb4db53fce055d8db2f8cbd7e95d2918d0adf",
+      "size": 19289759
     }
   ]
 }
