@@ -1,10 +1,10 @@
 {
   "files": [
     {
-      "source": "https://github.com/farion1231/cc-switch/releases/download/v3.16.5/CC-Switch-v3.16.5-Windows-Portable.zip",
-      "path": "github.com/farion1231/cc-switch/releases/download/v3.16.5/CC-Switch-v3.16.5-Windows-Portable.zip",
-      "sha256": "bfacdd5482d917a3c363e2a56b554935b32ceb5ae4b37453e8fab09fda329498",
-      "size": 12407588
+      "source": "https://github.com/thuanpham582002/tabby-mcp-server/archive/refs/tags/v1.0.3.zip",
+      "path": "github.com/thuanpham582002/tabby-mcp-server/archive/refs/tags/v1.0.3.zip",
+      "sha256": "58dd296a8a09b35817f1df0ccebcf993727a9485129dde8d53cc93aa1a038ae1",
+      "size": 7890343
     }
   ]
 }
