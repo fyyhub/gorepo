@@ -5,4 +5,4 @@
 # https://example.com/download?id=abc => tools/example.bin
 #
 # Add the external file URLs you want to mirror below.
-https://github.com/thuanpham582002/tabby-mcp-server/archive/refs/tags/v1.0.3.zip
+https://github.com/Eugeny/tabby/archive/refs/tags/v1.0.234.zip
