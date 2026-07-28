@@ -5,4 +5,4 @@
 # https://example.com/download?id=abc => tools/example.bin
 #
 # Add the external file URLs you want to mirror below.
-https://packages.timber.io/vector/0.57.0/vector-0.57.0-x86_64-pc-windows-msvc.zip
+https://packages.timber.io/vector/0.56.0/vector-0.56.0-x86_64-pc-windows-msvc.zip
