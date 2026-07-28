@@ -1,10 +1,10 @@
 {
   "files": [
     {
-      "source": "https://packages.timber.io/vector/0.57.0/vector-0.57.0-x86_64-pc-windows-msvc.zip",
-      "path": "packages.timber.io/vector/0.57.0/vector-0.57.0-x86_64-pc-windows-msvc.zip",
-      "sha256": "9aaf4dbc970a4579ca2868bcc98034b53a53da070c092753bb317b38ada13cf5",
-      "size": 48788162
+      "source": "https://packages.timber.io/vector/0.56.0/vector-0.56.0-x86_64-pc-windows-msvc.zip",
+      "path": "packages.timber.io/vector/0.56.0/vector-0.56.0-x86_64-pc-windows-msvc.zip",
+      "sha256": "67611f6b18c3b267ab26402c0dddc59e59bbccd762c7c0ea5f654f4ec4e6bf42",
+      "size": 48547825
     }
   ]
 }
