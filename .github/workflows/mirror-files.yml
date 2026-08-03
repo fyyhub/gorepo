@@ -104,6 +104,22 @@ jobs:
             git push origin "$tag"
           fi
 
+          old_tags="$(git tag --list 'v0.*.*' | grep -vx "$tag" || true)"
+          if [[ -n "$old_tags" ]]; then
+            while IFS= read -r old_tag; do
+              [[ -z "$old_tag" ]] && continue
+
+              echo "Deleting old release/tag $old_tag"
+              release_id="$(gh release view "$old_tag" --json databaseId -q .databaseId 2>/dev/null || true)"
+              if [[ -n "$release_id" ]]; then
+                gh api -X DELETE "repos/${GITHUB_REPOSITORY}/releases/${release_id}"
+              fi
+
+              git push origin ":refs/tags/$old_tag"
+              git tag -d "$old_tag" >/dev/null 2>&1 || true
+            done <<< "$old_tags"
+          fi
+
           tar -czf mirrored-files.tar.gz files
           if gh release view "$tag" >/dev/null 2>&1; then
             echo "Release $tag already exists."

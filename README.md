@@ -12,6 +12,7 @@ The important part for an internal Go proxy is the committed `files/` directory 
    - downloads the URLs with `go run ./cmd/syncfiles -manifest urls.txt -out files -clean`
    - commits the result under `files/`
    - creates the next `v0.x.y` tag
+   - deletes previous `v0.*.*` GitHub Releases and remote tags
    - creates a GitHub Release with `mirrored-files.tar.gz`
 4. From the internal network, fetch the module through your company Go mirror:
 
@@ -95,4 +96,5 @@ files/tools/demo.zip
 
 - GitHub blocks normal Git files larger than 100 MB, so very large files should not be committed directly.
 - Tags stay under `v0.x.y` to avoid Go's special module path rules for `v2+`.
+- Each new release removes previous `v0.*.*` GitHub Releases and remote tags, leaving only the newest generated release.
 - If `urls.txt` becomes empty later, the workflow cleans old `files/` content and publishes a new tag for that state.
