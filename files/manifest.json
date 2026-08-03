@@ -1,10 +1,10 @@
 {
   "files": [
     {
-      "source": "https://packages.timber.io/vector/0.56.0/vector-0.56.0-x86_64-pc-windows-msvc.zip",
-      "path": "packages.timber.io/vector/0.56.0/vector-0.56.0-x86_64-pc-windows-msvc.zip",
-      "sha256": "67611f6b18c3b267ab26402c0dddc59e59bbccd762c7c0ea5f654f4ec4e6bf42",
-      "size": 48547825
+      "source": "https://github.com/vectordotdev/vrl/archive/refs/heads/main.zip",
+      "path": "github.com/vectordotdev/vrl/archive/refs/heads/main.zip",
+      "sha256": "a0a6007263b8545721d0fab89d97062a1b07cfb29c9304b0c62d7e6e3eca0f3d",
+      "size": 1280558
     }
   ]
 }
