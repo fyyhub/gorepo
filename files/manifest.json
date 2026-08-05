@@ -1,10 +1,10 @@
 {
   "files": [
     {
-      "source": "https://github.com/vectordotdev/vrl/archive/refs/heads/main.zip",
-      "path": "github.com/vectordotdev/vrl/archive/refs/heads/main.zip",
-      "sha256": "a0a6007263b8545721d0fab89d97062a1b07cfb29c9304b0c62d7e6e3eca0f3d",
-      "size": 1280558
+      "source": "https://github.com/VictoriaMetrics/VictoriaMetrics/archive/refs/heads/master.zip",
+      "path": "github.com/VictoriaMetrics/VictoriaMetrics/archive/refs/heads/master.zip",
+      "sha256": "baf41f95458fc7a64645823ba73bec6f4751914e20e08d8288d2284ae882aa74",
+      "size": 61569919
     }
   ]
 }
