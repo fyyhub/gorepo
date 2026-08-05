@@ -5,4 +5,4 @@
 # https://example.com/download?id=abc => tools/example.bin
 #
 # Add the external file URLs you want to mirror below.
-https://github.com/vectordotdev/vrl/archive/refs/heads/main.zip
+https://github.com/VictoriaMetrics/VictoriaMetrics/archive/refs/heads/master.zip
