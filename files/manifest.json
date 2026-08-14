@@ -1,29 +1,10 @@
 {
   "files": [
     {
-      "source": "https://github.com/ningbainb/deepseek-harness-desktop/releases/download/desktop-v0.1.1/DeepSeek-Harness-Desktop-Setup-0.1.1-x64.exe",
-      "path": "github.com/ningbainb/deepseek-harness-desktop/releases/download/desktop-v0.1.1/DeepSeek-Harness-Desktop-Setup-0.1.1-x64.exe",
-      "sha256": "349a458d594639045e791838dc32e35e61e48e293b25380cb54c8ec8ea4a49cf",
-      "size": 200108285,
-      "chunked": true,
-      "chunk_size": 99614720,
-      "chunks": [
-        {
-          "path": "_chunks/github.com/ningbainb/deepseek-harness-desktop/releases/download/desktop-v0.1.1/DeepSeek-Harness-Desktop-Setup-0.1.1-x64.exe.parts/part0001",
-          "sha256": "6237002f34e9332c81198d6e0fd1354a3b8295804e26f8302df22c55469157b6",
-          "size": 99614720
-        },
-        {
-          "path": "_chunks/github.com/ningbainb/deepseek-harness-desktop/releases/download/desktop-v0.1.1/DeepSeek-Harness-Desktop-Setup-0.1.1-x64.exe.parts/part0002",
-          "sha256": "4a17f6aad9c70bbfe871126feb8fe2ca94c068907327e6ea598420d530dbd606",
-          "size": 99614720
-        },
-        {
-          "path": "_chunks/github.com/ningbainb/deepseek-harness-desktop/releases/download/desktop-v0.1.1/DeepSeek-Harness-Desktop-Setup-0.1.1-x64.exe.parts/part0003",
-          "sha256": "060296470576631abb566457561cc74fd79b6ba68e642666391278ca9a9b2fa7",
-          "size": 878845
-        }
-      ]
+      "source": "https://github.com/Sakana-yuyu/deepseek-harness-desktop/releases/download/desktop-v0.1.0-rc.5/deepseek-harness-0.1.0-rc.5-windows-x64-setup.exe",
+      "path": "github.com/Sakana-yuyu/deepseek-harness-desktop/releases/download/desktop-v0.1.0-rc.5/deepseek-harness-0.1.0-rc.5-windows-x64-setup.exe",
+      "sha256": "87470c9d47b0d7690466faf32fe9c025cfe198e0da760cb94dfd1a4c49da75c5",
+      "size": 11492326
     }
   ]
 }
