@@ -5,4 +5,4 @@
 # https://example.com/download?id=abc => tools/example.bin
 #
 # Add the external file URLs you want to mirror below.
-https://github.com/VictoriaMetrics/VictoriaMetrics/archive/refs/heads/master.zip
+https://github.com/ningbainb/deepseek-harness-desktop/releases/download/desktop-v0.1.1/DeepSeek-Harness-Desktop-Setup-0.1.1-x64.exe
