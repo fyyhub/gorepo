@@ -5,4 +5,4 @@
 # https://example.com/download?id=abc => tools/example.bin
 #
 # Add the external file URLs you want to mirror below.
-https://github.com/ningbainb/deepseek-harness-desktop/releases/download/desktop-v0.1.1/DeepSeek-Harness-Desktop-Setup-0.1.1-x64.exe
+https://github.com/Sakana-yuyu/deepseek-harness-desktop/releases/download/desktop-v0.1.0-rc.5/deepseek-harness-0.1.0-rc.5-windows-x64-setup.exe
