@@ -1,10 +1,10 @@
 {
   "files": [
     {
-      "source": "https://github.com/Sakana-yuyu/deepseek-harness-desktop/releases/download/desktop-v0.1.0-rc.5/deepseek-harness-0.1.0-rc.5-windows-x64-setup.exe",
-      "path": "github.com/Sakana-yuyu/deepseek-harness-desktop/releases/download/desktop-v0.1.0-rc.5/deepseek-harness-0.1.0-rc.5-windows-x64-setup.exe",
-      "sha256": "87470c9d47b0d7690466faf32fe9c025cfe198e0da760cb94dfd1a4c49da75c5",
-      "size": 11492326
+      "source": "https://github.com/deepseek-ai/deepseek-harness/archive/refs/heads/master.zip",
+      "path": "github.com/deepseek-ai/deepseek-harness/archive/refs/heads/master.zip",
+      "sha256": "47fb7e386c0bd86a6c4341321b8f2915cd6f490a687f8deaf78714e369e4c91d",
+      "size": 19613102
     }
   ]
 }
