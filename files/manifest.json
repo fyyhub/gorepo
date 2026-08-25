@@ -1,24 +1,10 @@
 {
   "files": [
     {
-      "source": "https://github.com/electron/electron/releases/download/v33.4.11/electron-v33.4.11-win32-x64.zip",
-      "path": "github.com/electron/electron/releases/download/v33.4.11/electron-v33.4.11-win32-x64.zip",
-      "sha256": "f64c8a5a81d9b420b636fdba13e180f49d69f2198e1d86a8b01f858b17a9483c",
-      "size": 115028145,
-      "chunked": true,
-      "chunk_size": 99614720,
-      "chunks": [
-        {
-          "path": "_chunks/github.com/electron/electron/releases/download/v33.4.11/electron-v33.4.11-win32-x64.zip.parts/part0001",
-          "sha256": "21dae9bace7d0d03237b80e53555945b6f32f3e919cd792e388c8fb2723fa68c",
-          "size": 99614720
-        },
-        {
-          "path": "_chunks/github.com/electron/electron/releases/download/v33.4.11/electron-v33.4.11-win32-x64.zip.parts/part0002",
-          "sha256": "fdbfa9de5d3d37fec5977d14dc91b6cfd7d59ae1a9e1602544f30a22d9adea4a",
-          "size": 15413425
-        }
-      ]
+      "source": "https://github.com/electron-userland/electron-builder-binaries/releases/download/nsis-3.0.4.1/nsis-3.0.4.1.7z",
+      "path": "github.com/electron-userland/electron-builder-binaries/releases/download/nsis-3.0.4.1/nsis-3.0.4.1.7z",
+      "sha256": "9877df902530f96357d13a7a31ae2b9df67f48b11ffc9a1700a7c961574ec5fa",
+      "size": 1287512
     }
   ]
 }
