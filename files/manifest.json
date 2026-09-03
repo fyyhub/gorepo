@@ -1,10 +1,24 @@
 {
   "files": [
     {
-      "source": "https://github.com/electron-userland/electron-builder-binaries/releases/download/nsis-resources-3.4.1/nsis-resources-3.4.1.7z",
-      "path": "github.com/electron-userland/electron-builder-binaries/releases/download/nsis-resources-3.4.1/nsis-resources-3.4.1.7z",
-      "sha256": "593a9a92ef958321293ac6a2ee61e64bf1bd543142a5bd6b3d310709cc924103",
-      "size": 730800
+      "source": "https://github.com/binaricat/Netcatty/releases/download/v1.1.82/Netcatty-1.1.82-portable-win-x64.exe",
+      "path": "github.com/binaricat/Netcatty/releases/download/v1.1.82/Netcatty-1.1.82-portable-win-x64.exe",
+      "sha256": "1284fe22cf402c8e87ff8d10d03860874a1e42aa38b135de8e74809cffd841d5",
+      "size": 136091845,
+      "chunked": true,
+      "chunk_size": 99614720,
+      "chunks": [
+        {
+          "path": "_chunks/github.com/binaricat/Netcatty/releases/download/v1.1.82/Netcatty-1.1.82-portable-win-x64.exe.parts/part0001",
+          "sha256": "b1f16d06f628a52afa0b8ebe5035c58588deac45e18669c00e620482dd77178d",
+          "size": 99614720
+        },
+        {
+          "path": "_chunks/github.com/binaricat/Netcatty/releases/download/v1.1.82/Netcatty-1.1.82-portable-win-x64.exe.parts/part0002",
+          "sha256": "8716b1de7cbbe169c1da7c72c578089e253cf03a5b832172135e10f5b314b9dd",
+          "size": 36477125
+        }
+      ]
     }
   ]
 }
