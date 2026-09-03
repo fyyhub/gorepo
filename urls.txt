@@ -5,4 +5,4 @@
 # https://example.com/download?id=abc => tools/example.bin
 #
 # Add the external file URLs you want to mirror below.
-https://github.com/electron-userland/electron-builder-binaries/releases/download/nsis-resources-3.4.1/nsis-resources-3.4.1.7z
+https://github.com/binaricat/Netcatty/releases/download/v1.1.82/Netcatty-1.1.82-portable-win-x64.exe
