@@ -1,22 +1,22 @@
 {
   "files": [
     {
-      "source": "https://github.com/binaricat/Netcatty/releases/download/v1.1.82/Netcatty-1.1.82-portable-win-x64.exe",
-      "path": "github.com/binaricat/Netcatty/releases/download/v1.1.82/Netcatty-1.1.82-portable-win-x64.exe",
-      "sha256": "1284fe22cf402c8e87ff8d10d03860874a1e42aa38b135de8e74809cffd841d5",
-      "size": 136091845,
+      "source": "https://github.com/binaricat/Netcatty/releases/download/v1.1.83/Netcatty-1.1.83-portable-win-x64.exe",
+      "path": "github.com/binaricat/Netcatty/releases/download/v1.1.83/Netcatty-1.1.83-portable-win-x64.exe",
+      "sha256": "bb77188b2cd3336d5dfcb122bb3ff43feafec2981ac2f79d7897f68f97bc4647",
+      "size": 136157555,
       "chunked": true,
       "chunk_size": 99614720,
       "chunks": [
         {
-          "path": "_chunks/github.com/binaricat/Netcatty/releases/download/v1.1.82/Netcatty-1.1.82-portable-win-x64.exe.parts/part0001",
-          "sha256": "b1f16d06f628a52afa0b8ebe5035c58588deac45e18669c00e620482dd77178d",
+          "path": "_chunks/github.com/binaricat/Netcatty/releases/download/v1.1.83/Netcatty-1.1.83-portable-win-x64.exe.parts/part0001",
+          "sha256": "fab96f3dc274faad816c96b5916e49cb095bca242ebc2fe8c6a15a514bd26c7f",
           "size": 99614720
         },
         {
-          "path": "_chunks/github.com/binaricat/Netcatty/releases/download/v1.1.82/Netcatty-1.1.82-portable-win-x64.exe.parts/part0002",
-          "sha256": "8716b1de7cbbe169c1da7c72c578089e253cf03a5b832172135e10f5b314b9dd",
-          "size": 36477125
+          "path": "_chunks/github.com/binaricat/Netcatty/releases/download/v1.1.83/Netcatty-1.1.83-portable-win-x64.exe.parts/part0002",
+          "sha256": "ea88073893709eb6c7b3e08687211e2a44c509ca71b86adfe6e5c1c4e0b4671c",
+          "size": 36542835
         }
       ]
     }
