@@ -5,4 +5,4 @@
 # https://example.com/download?id=abc => tools/example.bin
 #
 # Add the external file URLs you want to mirror below.
-https://github.com/binaricat/Netcatty/releases/download/v1.1.82/Netcatty-1.1.82-portable-win-x64.exe
+https://github.com/binaricat/Netcatty/releases/download/v1.1.83/Netcatty-1.1.83-portable-win-x64.exe
