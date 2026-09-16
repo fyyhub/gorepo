@@ -1,24 +1,10 @@
 {
   "files": [
     {
-      "source": "https://github.com/binaricat/Netcatty/releases/download/v1.1.83/Netcatty-1.1.83-portable-win-x64.exe",
-      "path": "github.com/binaricat/Netcatty/releases/download/v1.1.83/Netcatty-1.1.83-portable-win-x64.exe",
-      "sha256": "bb77188b2cd3336d5dfcb122bb3ff43feafec2981ac2f79d7897f68f97bc4647",
-      "size": 136157555,
-      "chunked": true,
-      "chunk_size": 99614720,
-      "chunks": [
-        {
-          "path": "_chunks/github.com/binaricat/Netcatty/releases/download/v1.1.83/Netcatty-1.1.83-portable-win-x64.exe.parts/part0001",
-          "sha256": "fab96f3dc274faad816c96b5916e49cb095bca242ebc2fe8c6a15a514bd26c7f",
-          "size": 99614720
-        },
-        {
-          "path": "_chunks/github.com/binaricat/Netcatty/releases/download/v1.1.83/Netcatty-1.1.83-portable-win-x64.exe.parts/part0002",
-          "sha256": "ea88073893709eb6c7b3e08687211e2a44c509ca71b86adfe6e5c1c4e0b4671c",
-          "size": 36542835
-        }
-      ]
+      "source": "https://github.com/Chevey339/kelivo/releases/download/v1.2.6/Kelivo_windows_1.2.6+73_setup.exe",
+      "path": "github.com/Chevey339/kelivo/releases/download/v1.2.6/Kelivo_windows_1.2.6+73_setup.exe",
+      "sha256": "cee7ceb91087425bc2165795d2b2cfb7517f9fa6a729f2d66adc87a1cbc12d72",
+      "size": 25909813
     }
   ]
 }
