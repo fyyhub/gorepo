@@ -5,4 +5,4 @@
 # https://example.com/download?id=abc => tools/example.bin
 #
 # Add the external file URLs you want to mirror below.
-https://github.com/Chevey339/kelivo/releases/download/v1.2.6/Kelivo_windows_1.2.6+73_setup.exe
+https://github.com/vastsa/PI-Desktop/releases/download/v0.15.3/PI-Desktop-Portable-0.15.3.exe
