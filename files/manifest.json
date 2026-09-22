@@ -1,10 +1,10 @@
 {
   "files": [
     {
-      "source": "https://github.com/grafana/grafana-infinity-datasource/releases/download/v4.0.0/yesoreyeram-infinity-datasource-4.0.0.windows_amd64.zip",
-      "path": "github.com/grafana/grafana-infinity-datasource/releases/download/v4.0.0/yesoreyeram-infinity-datasource-4.0.0.windows_amd64.zip",
-      "sha256": "e41465df6fc80e6d03b67a6a118a312c053dd35fd9935c94032ec7c0cc6fa4d6",
-      "size": 17464329
+      "source": "https://github.com/grafana/grafana-infinity-datasource/releases/download/v3.11.3/yesoreyeram-infinity-datasource-3.11.3.windows_amd64.zip",
+      "path": "github.com/grafana/grafana-infinity-datasource/releases/download/v3.11.3/yesoreyeram-infinity-datasource-3.11.3.windows_amd64.zip",
+      "sha256": "ea054939e4ebf1b70f429384d26fc06b5c0356f2259d0710b33f53437c7a1b8e",
+      "size": 17464227
     }
   ]
 }
