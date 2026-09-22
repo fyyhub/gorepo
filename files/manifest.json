@@ -1,24 +1,10 @@
 {
   "files": [
     {
-      "source": "https://github.com/vastsa/PI-Desktop/releases/download/v0.15.3/PI-Desktop-Portable-0.15.3.exe",
-      "path": "github.com/vastsa/PI-Desktop/releases/download/v0.15.3/PI-Desktop-Portable-0.15.3.exe",
-      "sha256": "d543dfdf9cfab694125dbcf11438de5ec6578988102bc1122c484e1a6f3942bc",
-      "size": 106249125,
-      "chunked": true,
-      "chunk_size": 99614720,
-      "chunks": [
-        {
-          "path": "_chunks/github.com/vastsa/PI-Desktop/releases/download/v0.15.3/PI-Desktop-Portable-0.15.3.exe.parts/part0001",
-          "sha256": "6831ddcf97c9e01d34e57f239e243dd53e9ac63b74a66ea64ba1e019f36f0313",
-          "size": 99614720
-        },
-        {
-          "path": "_chunks/github.com/vastsa/PI-Desktop/releases/download/v0.15.3/PI-Desktop-Portable-0.15.3.exe.parts/part0002",
-          "sha256": "1231418d4f45a8f7c180395371eb02a1429f599cc678dcda892fce5934ea200d",
-          "size": 6634405
-        }
-      ]
+      "source": "https://github.com/grafana/grafana-infinity-datasource/releases/download/v4.0.0/yesoreyeram-infinity-datasource-4.0.0.windows_amd64.zip",
+      "path": "github.com/grafana/grafana-infinity-datasource/releases/download/v4.0.0/yesoreyeram-infinity-datasource-4.0.0.windows_amd64.zip",
+      "sha256": "e41465df6fc80e6d03b67a6a118a312c053dd35fd9935c94032ec7c0cc6fa4d6",
+      "size": 17464329
     }
   ]
 }
