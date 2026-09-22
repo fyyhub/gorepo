@@ -1,10 +1,24 @@
 {
   "files": [
     {
-      "source": "https://github.com/Chevey339/kelivo/releases/download/v1.2.6/Kelivo_windows_1.2.6+73_setup.exe",
-      "path": "github.com/Chevey339/kelivo/releases/download/v1.2.6/Kelivo_windows_1.2.6+73_setup.exe",
-      "sha256": "cee7ceb91087425bc2165795d2b2cfb7517f9fa6a729f2d66adc87a1cbc12d72",
-      "size": 25909813
+      "source": "https://github.com/vastsa/PI-Desktop/releases/download/v0.15.3/PI-Desktop-Portable-0.15.3.exe",
+      "path": "github.com/vastsa/PI-Desktop/releases/download/v0.15.3/PI-Desktop-Portable-0.15.3.exe",
+      "sha256": "d543dfdf9cfab694125dbcf11438de5ec6578988102bc1122c484e1a6f3942bc",
+      "size": 106249125,
+      "chunked": true,
+      "chunk_size": 99614720,
+      "chunks": [
+        {
+          "path": "_chunks/github.com/vastsa/PI-Desktop/releases/download/v0.15.3/PI-Desktop-Portable-0.15.3.exe.parts/part0001",
+          "sha256": "6831ddcf97c9e01d34e57f239e243dd53e9ac63b74a66ea64ba1e019f36f0313",
+          "size": 99614720
+        },
+        {
+          "path": "_chunks/github.com/vastsa/PI-Desktop/releases/download/v0.15.3/PI-Desktop-Portable-0.15.3.exe.parts/part0002",
+          "sha256": "1231418d4f45a8f7c180395371eb02a1429f599cc678dcda892fce5934ea200d",
+          "size": 6634405
+        }
+      ]
     }
   ]
 }
