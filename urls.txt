@@ -5,4 +5,4 @@
 # https://example.com/download?id=abc => tools/example.bin
 #
 # Add the external file URLs you want to mirror below.
-https://github.com/grafana/grafana-infinity-datasource/releases/download/v4.0.0/yesoreyeram-infinity-datasource-4.0.0.windows_amd64.zip
+https://github.com/grafana/grafana-infinity-datasource/releases/download/v3.11.3/yesoreyeram-infinity-datasource-3.11.3.windows_amd64.zip
