@@ -1,10 +1,10 @@
 {
   "files": [
     {
-      "source": "https://github.com/grafana/grafana-infinity-datasource/releases/download/v3.11.3/yesoreyeram-infinity-datasource-3.11.3.windows_amd64.zip",
-      "path": "github.com/grafana/grafana-infinity-datasource/releases/download/v3.11.3/yesoreyeram-infinity-datasource-3.11.3.windows_amd64.zip",
-      "sha256": "ea054939e4ebf1b70f429384d26fc06b5c0356f2259d0710b33f53437c7a1b8e",
-      "size": 17464227
+      "source": "https://github.com/zeroclaw-labs/zeroclaw/archive/refs/heads/master.zip",
+      "path": "github.com/zeroclaw-labs/zeroclaw/archive/refs/heads/master.zip",
+      "sha256": "1f97af6096e67be3efbd4b2bec89a065349552ed1dda663b2865f2de6b856f48",
+      "size": 33970504
     }
   ]
 }
