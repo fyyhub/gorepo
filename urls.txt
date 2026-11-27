@@ -5,4 +5,4 @@
 # https://example.com/download?id=abc => tools/example.bin
 #
 # Add the external file URLs you want to mirror below.
-https://chatgpt.com/backend-api/estuary/content?id=file_00000000ab8481f5b7385135f374d0ed&fn=python-3.13.18-linux-arm-kit.tar&cd=attachment&ts=498817&p=fs&cid=1&sig=87ae428ad5f08ce48414fee7aef7d30cc05b9cd3db0be01fbc1e2049b5c60207&v=0
+https://bashlinker.alenwalak.workers.dev/iran/507xa5qZu4GQayAk
